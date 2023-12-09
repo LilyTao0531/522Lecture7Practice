@@ -33,8 +33,6 @@ results/figure/sierra.png : scripts/plotcount.py results/sierra.dat
 	--output_file=results/figure/sierra.png 
 
 report/_build/html/index.html : report/count_report.ipynb \
-	report/_config.yml \
-	report/_toc.yml \
 	results/figure/isles.png \
 	results/figure/abyss.png \
 	results/figure/last.png \
@@ -42,12 +40,5 @@ report/_build/html/index.html : report/count_report.ipynb \
 		jupyter-book build report
 
 clean:
-	rm -f results/isles.dat
-	rm -f results/abyss.dat
-	rm -f results/last.dat
-	rm -f results/sierra.dat
-	rm -f results/figure/isles.png
-	rm -f results/figure/abyss.png
-	rm -f results/figure/last.png
-	rm -f results/figure/sierra.png
+	rm -f results/*.dat results/figure/*.png
 	rm -rf report/_build
